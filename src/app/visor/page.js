@@ -1,4 +1,4 @@
-import Form from "../components/NewComponent/Form/Form"
+import GridComponent from "../components/VisorComponent/GridComponent"
 export default function Page() {
-    return <Form/>
+    return <GridComponent/>
   }
