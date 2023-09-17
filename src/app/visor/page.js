@@ -1,4 +1,4 @@
-
+import Form from "../components/NewComponent/Form/Form"
 export default function Page() {
-    return <h1>Hello!</h1>
+    return <Form/>
   }
