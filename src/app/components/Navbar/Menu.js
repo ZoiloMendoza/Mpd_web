@@ -30,11 +30,8 @@ import Link from "next/link";
 
 import Navbar from "./Navbar";
 import { NavStyles } from "./style";
+
 const drawerWidth = 180;
-
-// navbar
-
-//end
 
 const openedMixin = (theme) => ({
   width: drawerWidth,

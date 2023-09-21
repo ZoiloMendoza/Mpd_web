@@ -2,10 +2,14 @@
 // import { Inter } from 'next/font/google'
 // const inter = Poppins({ subsets: ['latin'] })
 
-import { Poppins } from "next/font/google";
-const poppins = Poppins({
-  weight: "400",
+import { Roboto } from "next/font/google";
+const poppins = Roboto({
+  // weight: "400",
+  // subsets: ["latin"],
+  weight: ["400", "700"],
+  style: ["normal", "italic"],
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata = {
