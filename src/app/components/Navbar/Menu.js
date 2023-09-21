@@ -31,7 +31,7 @@ import Link from "next/link";
 import Navbar from "./Navbar";
 import { NavStyles } from "./style";
 
-const drawerWidth = 180;
+const drawerWidth = 160;
 
 const openedMixin = (theme) => ({
   width: drawerWidth,
@@ -48,9 +48,9 @@ const closedMixin = (theme) => ({
     duration: theme.transitions.duration.leavingScreen,
   }),
   overflowX: "hidden",
-  width: `calc(${theme.spacing(7)} + 1px)`,
+  width: `calc(${theme.spacing(6)} + 1px)`,
   [theme.breakpoints.up("sm")]: {
-    width: `calc(${theme.spacing(8)} + 1px)`,
+    width: `calc(${theme.spacing(6)} + 1px)`,
   },
 });
 
@@ -132,6 +132,9 @@ export const MiniDrawer = () => {
       </AppBar>
       <Drawer variant="permanent" open={open}>
         <DrawerHeader style={NavStyles.settings}>
+          <h3>
+            <b>MENÚ</b>
+          </h3>
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === "rtl" ? (
               <ChevronRightIcon style={NavStyles.colorIcons} />
@@ -140,79 +143,78 @@ export const MiniDrawer = () => {
             )}
           </IconButton>
         </DrawerHeader>
-        <Divider />
+        {/* <Divider /> */}
         {/* start links */}
         <nav aria-label="main mailbox folders">
           <List>
             <ListItem disablePadding>
               <ListItemButton>
-                <ListItemIcon>
-                  <Link href="/">
+                <Link href="/">
+                  <ListItemIcon style={{ minWidth: "36px" }}>
                     <EditIcon style={NavStyles.iconMenu} />
-                  </Link>
-                </ListItemIcon>
-                <ListItemText primary="Nuevo" />
+                  </ListItemIcon>
+                </Link>
+                <p>Nuevo</p>
               </ListItemButton>
             </ListItem>
 
             <ListItem disablePadding>
               <ListItemButton>
-                <ListItemIcon>
-                  <Link href="/">
+                <Link href="/">
+                  <ListItemIcon style={{ minWidth: "36px" }}>
                     <RequestQuoteIcon style={NavStyles.iconMenu} />
-                  </Link>
-                </ListItemIcon>
-                <ListItemText primary="Cotizar" />
+                  </ListItemIcon>
+                </Link>
+                <p>Cotizar</p>
               </ListItemButton>
             </ListItem>
 
             <ListItem disablePadding>
               <ListItemButton>
-                <ListItemIcon>
-                  <Link href="/">
+                <Link href="/">
+                  <ListItemIcon style={{ minWidth: "36px" }}>
                     <SummarizeIcon style={NavStyles.iconMenu} />
-                  </Link>
-                </ListItemIcon>
-                <ListItemText primary="Requisitar" />
+                  </ListItemIcon>
+                </Link>
+                <p>Requisitar</p>
               </ListItemButton>
             </ListItem>
 
             <ListItem disablePadding>
               <ListItemButton>
-                <ListItemIcon>
-                  <Link href="/">
+                <Link href="/">
+                  <ListItemIcon style={{ minWidth: "36px" }}>
                     <CheckCircleIcon style={NavStyles.iconMenu} />
-                  </Link>
-                </ListItemIcon>
-                <ListItemText primary="Autorizar" />
+                  </ListItemIcon>
+                </Link>
+                <p>Autorizar</p>
               </ListItemButton>
             </ListItem>
 
             <ListItem disablePadding>
               <ListItemButton>
-                <ListItemIcon>
-                  <Link href="/">
+                <Link href="/">
+                  <ListItemIcon style={{ minWidth: "36px" }}>
                     <LocalMallIcon style={NavStyles.iconMenu} />
-                  </Link>
-                </ListItemIcon>
-                <ListItemText primary="Comprar" />
+                  </ListItemIcon>
+                </Link>
+                <p>Comprar</p>
               </ListItemButton>
             </ListItem>
 
             <ListItem disablePadding>
               <ListItemButton>
-                <ListItemIcon>
-                  <Link href="/">
+                <Link href="/">
+                  <ListItemIcon style={{ minWidth: "36px" }}>
                     <LocalShippingIcon style={NavStyles.iconMenu} />
-                  </Link>
-                </ListItemIcon>
-                <ListItemText primary="Entregar" />
+                  </ListItemIcon>
+                </Link>
+                <p>Entregar</p>
               </ListItemButton>
             </ListItem>
           </List>
         </nav>
         {/* end links */}
-        <Divider />
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <DrawerHeader />

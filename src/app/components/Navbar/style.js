@@ -17,15 +17,12 @@ export const NavStyles = {
   },
   colorIcons: {
     color: "#D82E20",
-    fontSize: 30,
+    fontSize: 25,
   },
   iconMenu: {
     color: "#D82E20",
-    "&:hover": {
-      backgroundColor: "black",
-    },
-    // marginRight: "2",
-    // marginLeft: 0,
-    // width: "100%",
+    // "&:hover": {
+    //   backgroundColor: "black",
+    // },
   },
 };
