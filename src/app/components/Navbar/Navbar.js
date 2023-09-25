@@ -97,7 +97,8 @@ export const Navbar = () => {
   return (
     <Box style={NavStyles.box}>
       <AppBar position="static" style={NavStyles.settings}>
-        <Toolbar>
+        <Toolbar style={{ display:'flex', justifyContent: 'space-between', paddingLeft:'0px', paddingRight: '0px'}}>
+          {/*<Image src={logo} alt="logo" style={NavStyles.logo}/>*/}
           <Image src={logo} alt="logo" style={NavStyles.logo} />
           <SearchComp />
           <Box sx={{ flexGrow: 1 }} />

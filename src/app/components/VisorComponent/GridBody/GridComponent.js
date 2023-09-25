@@ -11,7 +11,7 @@ const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
   padding: theme.spacing(1),
   textAlign: "center",
-  height: "95vh",
+  height: "80vh",
   border: "2px solid black",
   color: theme.palette.text.secondary,
 }));
@@ -22,23 +22,19 @@ const GridComponent = () => {
   return (
     <Box style={GridStyles.box}>
       <Grid container spacing={2}>
-        <Grid item xs={matches != true ? 12 : 2}>
+        <Grid item xs={matches != true ? 12 : 5}>
           <Item>
             <h1>Menú</h1>
           </Item>
         </Grid>
         {matches && (
           <>
-            <Grid item xs={5}>
+            <Grid item xs={7}>
               <Item>
                 <h1>List Card</h1>
               </Item>
             </Grid>
-            <Grid item xs={5}>
-              <Item>
-                <h1>Detail Card</h1>
-              </Item>
-            </Grid>
+           
           </>
         )}
       </Grid>

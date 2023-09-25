@@ -22,21 +22,16 @@ const Example = () => {
   return (
     <Box style={NavStyles.box}>
       <Grid container>
-        <Grid item xs={matches != true ? 12 : 2}>
+        <Grid item xs={matches != true ? 12 : 5}>
           <Item>
             <h1>Menú</h1>
           </Item>
         </Grid>
         {matches && (
           <>
-            <Grid item xs={5}>
+            <Grid item xs={7}>
               <Item>
                 <h1>List Card</h1>
-              </Item>
-            </Grid>
-            <Grid item xs={5}>
-              <Item>
-                <h1>Detail Card</h1>
               </Item>
             </Grid>
           </>
