@@ -11,18 +11,26 @@ export const NavStyles = {
     width: "150px",
   },
   settings: {
-    // padding: "0,0,0,0",
     backgroundColor: "#e7e7e7",
     boxShadow: "none",
   },
   colorIcons: {
     color: "#D82E20",
-    fontSize: 25,
+    fontSize: 30,
   },
   iconMenu: {
     color: "#D82E20",
-    // "&:hover": {
-    //   backgroundColor: "black",
-    // },
   },
+  listWidthMenu: {
+    minWidth: "36px",
+  },
+  ListItemMenu: {
+    height: "50px",
+  },
+  ListItemDrawer: {
+    height: "40px",
+    marginLeft: "50px",
+    fontSize: "18px",
+  },
+  buttonNew: {},
 };

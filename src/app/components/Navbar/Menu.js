@@ -25,6 +25,7 @@ import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import LocalMallIcon from "@mui/icons-material/LocalMall";
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import EditIcon from "@mui/icons-material/Edit";
+import Button from "@mui/material/Button";
 
 import Link from "next/link";
 
@@ -132,9 +133,9 @@ export const MiniDrawer = () => {
       </AppBar>
       <Drawer variant="permanent" open={open}>
         <DrawerHeader style={NavStyles.settings}>
-          <h3>
-            <b>MENÚ</b>
-          </h3>
+          <ListItem disablePadding style={NavStyles.ListItemDrawer}>
+            <p>Menú</p>
+          </ListItem>
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === "rtl" ? (
               <ChevronRightIcon style={NavStyles.colorIcons} />
@@ -147,21 +148,39 @@ export const MiniDrawer = () => {
         {/* start links */}
         <nav aria-label="main mailbox folders">
           <List>
-            <ListItem disablePadding>
-              <ListItemButton sx={{height: '50px'}}>
-                <Link href="/">
-                  <ListItemIcon style={{ minWidth: "36px" }}>
-                    <EditIcon style={NavStyles.iconMenu} />
-                  </ListItemIcon>
-                </Link>
-                <p>Nuevo</p>
+            <ListItem disablePadding style={NavStyles.ListItemMenu}>
+              <ListItemButton>
+                {open === true ? (
+                  <Link href="/">
+                    <Button
+                      variant="outlined"
+                      style={{
+                        borderRadius: "50px",
+                        background: "#D82E20",
+                        border: "none",
+                        textTransform: "capitalize",
+                        color: "white",
+                        fontSize: "16px",
+                      }}
+                      startIcon={<EditIcon />}
+                    >
+                      <span> Nuevo</span>
+                    </Button>
+                  </Link>
+                ) : (
+                  <Link href="/">
+                    <ListItemIcon style={NavStyles.listWidthMenu}>
+                      <EditIcon style={NavStyles.iconMenu} />
+                    </ListItemIcon>
+                  </Link>
+                )}
               </ListItemButton>
             </ListItem>
 
-            <ListItem disablePadding>
-              <ListItemButton sx={{height: '50px'}}>
+            <ListItem disablePadding style={NavStyles.ListItemMenu}>
+              <ListItemButton>
                 <Link href="/">
-                  <ListItemIcon style={{ minWidth: "36px" }}>
+                  <ListItemIcon style={NavStyles.listWidthMenu}>
                     <RequestQuoteIcon style={NavStyles.iconMenu} />
                   </ListItemIcon>
                 </Link>
@@ -169,10 +188,10 @@ export const MiniDrawer = () => {
               </ListItemButton>
             </ListItem>
 
-            <ListItem disablePadding>
-              <ListItemButton sx={{height: '50px'}}>
+            <ListItem disablePadding style={NavStyles.ListItemMenu}>
+              <ListItemButton>
                 <Link href="/">
-                  <ListItemIcon style={{ minWidth: "36px" }}>
+                  <ListItemIcon style={NavStyles.listWidthMenu}>
                     <SummarizeIcon style={NavStyles.iconMenu} />
                   </ListItemIcon>
                 </Link>
@@ -180,10 +199,10 @@ export const MiniDrawer = () => {
               </ListItemButton>
             </ListItem>
 
-            <ListItem disablePadding>
-              <ListItemButton sx={{height: '50px'}}>
+            <ListItem disablePadding style={NavStyles.ListItemMenu}>
+              <ListItemButton>
                 <Link href="/">
-                  <ListItemIcon style={{ minWidth: "36px" }}>
+                  <ListItemIcon style={NavStyles.listWidthMenu}>
                     <CheckCircleIcon style={NavStyles.iconMenu} />
                   </ListItemIcon>
                 </Link>
@@ -191,10 +210,10 @@ export const MiniDrawer = () => {
               </ListItemButton>
             </ListItem>
 
-            <ListItem disablePadding>
-              <ListItemButton sx={{height: '50px'}}>
+            <ListItem disablePadding style={NavStyles.ListItemMenu}>
+              <ListItemButton>
                 <Link href="/">
-                  <ListItemIcon style={{ minWidth: "36px" }}>
+                  <ListItemIcon style={NavStyles.listWidthMenu}>
                     <LocalMallIcon style={NavStyles.iconMenu} />
                   </ListItemIcon>
                 </Link>
@@ -202,10 +221,10 @@ export const MiniDrawer = () => {
               </ListItemButton>
             </ListItem>
 
-            <ListItem disablePadding>
-              <ListItemButton sx={{height: '50px'}}>
+            <ListItem disablePadding style={NavStyles.ListItemMenu}>
+              <ListItemButton>
                 <Link href="/">
-                  <ListItemIcon style={{ minWidth: "36px" }}>
+                  <ListItemIcon style={NavStyles.listWidthMenu}>
                     <LocalShippingIcon style={NavStyles.iconMenu} />
                   </ListItemIcon>
                 </Link>
