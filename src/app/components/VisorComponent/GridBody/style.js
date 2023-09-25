@@ -1,6 +1,6 @@
 export const GridStyles = {
     box: {
-      marginTop: '7%',
+      marginTop: '50px',
       flexGrow: 1,
       //heigt: '50%'
     },
