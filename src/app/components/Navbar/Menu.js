@@ -148,7 +148,7 @@ export const MiniDrawer = () => {
         <nav aria-label="main mailbox folders">
           <List>
             <ListItem disablePadding>
-              <ListItemButton>
+              <ListItemButton sx={{height: '50px'}}>
                 <Link href="/">
                   <ListItemIcon style={{ minWidth: "36px" }}>
                     <EditIcon style={NavStyles.iconMenu} />
@@ -159,7 +159,7 @@ export const MiniDrawer = () => {
             </ListItem>
 
             <ListItem disablePadding>
-              <ListItemButton>
+              <ListItemButton sx={{height: '50px'}}>
                 <Link href="/">
                   <ListItemIcon style={{ minWidth: "36px" }}>
                     <RequestQuoteIcon style={NavStyles.iconMenu} />
@@ -170,7 +170,7 @@ export const MiniDrawer = () => {
             </ListItem>
 
             <ListItem disablePadding>
-              <ListItemButton>
+              <ListItemButton sx={{height: '50px'}}>
                 <Link href="/">
                   <ListItemIcon style={{ minWidth: "36px" }}>
                     <SummarizeIcon style={NavStyles.iconMenu} />
@@ -181,7 +181,7 @@ export const MiniDrawer = () => {
             </ListItem>
 
             <ListItem disablePadding>
-              <ListItemButton>
+              <ListItemButton sx={{height: '50px'}}>
                 <Link href="/">
                   <ListItemIcon style={{ minWidth: "36px" }}>
                     <CheckCircleIcon style={NavStyles.iconMenu} />
@@ -192,7 +192,7 @@ export const MiniDrawer = () => {
             </ListItem>
 
             <ListItem disablePadding>
-              <ListItemButton>
+              <ListItemButton sx={{height: '50px'}}>
                 <Link href="/">
                   <ListItemIcon style={{ minWidth: "36px" }}>
                     <LocalMallIcon style={NavStyles.iconMenu} />
@@ -203,7 +203,7 @@ export const MiniDrawer = () => {
             </ListItem>
 
             <ListItem disablePadding>
-              <ListItemButton>
+              <ListItemButton sx={{height: '50px'}}>
                 <Link href="/">
                   <ListItemIcon style={{ minWidth: "36px" }}>
                     <LocalShippingIcon style={NavStyles.iconMenu} />
