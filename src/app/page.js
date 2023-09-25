@@ -1,7 +1,5 @@
 import Example from "./components/Navbar/Example";
-import MiniDrawer from "./components/Navbar/Menu";
-import RegisterForm from "./components/Login/Register";
-
+import MiniDrawer from "./components/VisorComponent/Menu/Menu";
 export default function Page() {
   return (
     <>

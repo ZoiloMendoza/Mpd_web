@@ -28,10 +28,9 @@ import EditIcon from "@mui/icons-material/Edit";
 import Button from "@mui/material/Button";
 
 import Link from "next/link";
-
-import Navbar from "./Navbar";
-import { NavStyles } from "./style";
-
+import Navbar from "../../Navbar/Navbar";
+import { NavStyles } from "../../Navbar/style";
+import GridComponent from "../GridBody/GridComponent";
 const drawerWidth = 160;
 
 const openedMixin = (theme) => ({
@@ -134,13 +133,21 @@ export const MiniDrawer = () => {
       <Drawer variant="permanent" open={open}>
         <DrawerHeader style={NavStyles.settings}>
           <ListItem disablePadding style={NavStyles.ListItemDrawer}>
-            <p>Menú</p>
-          </ListItem>
-          <IconButton onClick={handleDrawerClose}>
+          
+            <p>Menú Motores</p>
+           </ListItem>
+          
+          <IconButton onClick={handleDrawerClose} style={{padding: '0px 0px'}}>
             {theme.direction === "rtl" ? (
-              <ChevronRightIcon style={NavStyles.colorIcons} />
+          
+            
+               <ChevronLeftIcon style={NavStyles.colorIcons} />
+               
             ) : (
+             
+               
               <ChevronLeftIcon style={NavStyles.colorIcons} />
+             
             )}
           </IconButton>
         </DrawerHeader>
@@ -236,8 +243,8 @@ export const MiniDrawer = () => {
         {/* end links */}
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-        <DrawerHeader />
-        <p>
+        {/*<DrawerHeader />*/}
+        {/*<p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Rhoncus
           dolor purus non enim praesent elementum facilisis leo vel. Risus at
@@ -251,7 +258,8 @@ export const MiniDrawer = () => {
           vivamus at augue. At augue eget arcu dictum varius duis at consectetur
           lorem. Velit sed ullamcorper morbi tincidunt. Lorem donec massa sapien
           faucibus et molestie ac.
-        </p>
+                </p>*/}
+         <GridComponent/>
       </Box>
     </Box>
   );
