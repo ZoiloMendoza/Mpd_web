@@ -7,6 +7,7 @@ import Grid from "@mui/material/Grid";
 import { GridStyles } from "./style";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import AlignItemsList from "../ListCard/List";
+import SimplePaper from "../DetailCard/DetailCard";
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
   ...theme.typography.body2,
@@ -26,7 +27,7 @@ const GridComponent = () => {
         <Grid item xs={matches != true ? 12 : 5}>
           <Item>
             <h1>List Card</h1>
-            <AlignItemsList/>
+            <AlignItemsList />
           </Item>
         </Grid>
         {matches && (
@@ -34,9 +35,9 @@ const GridComponent = () => {
             <Grid item xs={7}>
               <Item>
                 <h1>Detalle Card</h1>
+                <SimplePaper />
               </Item>
             </Grid>
-           
           </>
         )}
       </Grid>

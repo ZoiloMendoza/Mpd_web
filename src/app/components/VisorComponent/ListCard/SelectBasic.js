@@ -24,8 +24,9 @@ export default function BasicSelect() {
           label="Age"
           onChange={handleChange}
         >
-          <MenuItem value={10}>Urgente</MenuItem>
-          <MenuItem value={20}>Normal</MenuItem>
+          <MenuItem value={10}>Todos</MenuItem>
+          <MenuItem value={20}>Urgente</MenuItem>
+          <MenuItem value={30}>Normal</MenuItem>
         </Select>
       </FormControl>
       <Box sx={{ flex:'1', display:'flex', alignItems:'stretch', justifyContent: 'flex-end'}}>
