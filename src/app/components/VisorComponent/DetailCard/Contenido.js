@@ -61,7 +61,7 @@ export default function InputAdornments() {
           sx={{ flex: "1", minWidth: "50%", textAlign: "initial" }}
           variant="subtitle1"
         >
-          Tipo elemento: Motor eléctrico
+          Potencia: 22 kW
         </Typography>
         <Typography
           sx={{ flex: "1", minWidth: "50%", textAlign: "initial" }}
@@ -73,7 +73,7 @@ export default function InputAdornments() {
           sx={{ flex: "1", minWidth: "50%", textAlign: "initial" }}
           variant="subtitle1"
         >
-          Potencia: 22 kW
+          Tipo elemento: Motor eléctrico
         </Typography>
       </MenuItem>
       <MenuItem sx={{ display: "flex" }}>
