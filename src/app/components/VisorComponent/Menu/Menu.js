@@ -31,6 +31,7 @@ import Link from "next/link";
 import Navbar from "../../Navbar/Navbar";
 import { NavStyles } from "../../Navbar/style";
 import GridComponent from "../GridBody/GridComponent";
+import GridBoard from "../../NewComponent/GridBoard";
 const drawerWidth = 160;
 
 const openedMixin = (theme) => ({
@@ -133,21 +134,17 @@ export const MiniDrawer = () => {
       <Drawer variant="permanent" open={open}>
         <DrawerHeader style={NavStyles.settings}>
           <ListItem disablePadding style={NavStyles.ListItemDrawer}>
-          
             <p>Menú Motores</p>
-           </ListItem>
-          
-          <IconButton onClick={handleDrawerClose} style={{padding: '0px 0px'}}>
+          </ListItem>
+
+          <IconButton
+            onClick={handleDrawerClose}
+            style={{ padding: "0px 0px" }}
+          >
             {theme.direction === "rtl" ? (
-          
-            
-               <ChevronLeftIcon style={NavStyles.colorIcons} />
-               
-            ) : (
-             
-               
               <ChevronLeftIcon style={NavStyles.colorIcons} />
-             
+            ) : (
+              <ChevronLeftIcon style={NavStyles.colorIcons} />
             )}
           </IconButton>
         </DrawerHeader>
@@ -259,7 +256,8 @@ export const MiniDrawer = () => {
           lorem. Velit sed ullamcorper morbi tincidunt. Lorem donec massa sapien
           faucibus et molestie ac.
                 </p>*/}
-         <GridComponent/>
+        {/* <GridComponent/> zoy*/}
+        <GridBoard />
       </Box>
     </Box>
   );
