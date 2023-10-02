@@ -7,43 +7,71 @@ const PasswordRegEx =
   /^.*((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/;
 
 export const ValidationNewRegister = yup.object({
-  email: yup.string().email("Enter a Vaid Email").required("Email is Required"),
-
-  password: yup
+  os: yup
     .string()
-    .required("Enter Your Password")
-    .matches(PasswordRegEx, "Uppercase Lowercase Special char Required")
-    .min(8, "Password Should be minimum 8 character")
-    .max(50, "Too long"),
+    .length(3, "Min 5 caracteres")
+    .matches(/^[0-9]+$/, "Solo se permiten números")
+    .required("Requerido *"),
 
-  phoneNumber: yup
+  ot: yup
     .string()
-    .matches(phoneNumberRegEx, "Invalid Phone Number")
-    .max(11, "Invalid Phone Number")
-    .required("Required !"),
+    .length(3, "Min 5 caracteres")
+    .matches(/^[0-9]+$/, "Solo se permiten números")
+    .required("Requerido *"),
 
-  confirmPassword: yup
+  planta: yup
     .string()
-    .oneOf([yup.ref("password")], "Password does not matched")
-    .required("Confirm Password is Required"),
+    .required("Requerido *")
+    .notOneOf(["", "Seleccionar"], "Debes seleccionar una opción"),
 
-  image: yup
-    .mixed()
-    .required("File is Required")
-    .test(
-      "fileSize",
-      "File more than 0.5 MB not Allowed",
-      (value) => value && value.size <= 524288
-    )
-    .test(
-      "fileFormat",
-      "Unsupported Format",
-      (value) => value && SUPPORTED_FORMATS.includes(value.type)
-    ),
+  mini: yup
+    .string()
+    .required("Requerido *")
+    .notOneOf(["", "Seleccionar"], "Debes seleccionar una opción"),
 
-  // website: yup.string().url().required("Website is Required"),
+  dateStart: yup
+    .string()
+    .required("Requerido *")
+    .notOneOf(["", "Seleccionar"], "Debes seleccionar una opción"),
 
-  // select: yup.string().required("Select a Option"),
+  dateEnd: yup
+    .string()
+    .required("Requerido *")
+    .notOneOf(["", "Seleccionar"], "Debes seleccionar una opción"),
+
+  user: yup.string().required("Requerido *"),
+
+  typeElement: yup
+    .string()
+    .required("Requerido *")
+    .notOneOf(["", "Seleccionar"], "Debes seleccionar una opción"),
+
+  name: yup.string().required("Requerido *"),
+
+  typeProcess: yup
+    .string()
+    .required("Requerido *")
+    .notOneOf(["", "Seleccionar"], "Debes seleccionar una opción"),
+
+  potenciaCantidad: yup
+    .string()
+    .length(3, "Min 5 caracteres")
+    .matches(/^[0-9]+$/, "Solo se permiten números")
+    .required("Requerido *"),
+
+  potenciaData: yup
+    .string()
+    .required("Requerido *")
+    .notOneOf(["", "Seleccionar"], "Debes seleccionar una opción"),
+
+  golpeNew: yup.string().required("Requerido *"),
+
+  dataPlate: yup
+    .string()
+    .required("Requerido *")
+    .notOneOf(["", "Seleccionar"], "Debes seleccionar una opción"),
+
+  description: yup.string().required("Requerido *"),
 });
 
 export default ValidationNewRegister;

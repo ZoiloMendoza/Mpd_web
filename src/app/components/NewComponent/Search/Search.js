@@ -55,6 +55,7 @@ const Search = () => {
                       <Grid item xs={12} md={4}>
                         <Button
                           variant="outlined"
+                          sx={12}
                           style={{
                             borderRadius: "50px",
                             background: "#D82E20",
@@ -62,7 +63,7 @@ const Search = () => {
                             textTransform: "capitalize",
                             color: "white",
                             fontSize: "16px",
-                            width: "8vw",
+                            // width: "8vw",
                             marginTop: "15px",
                             height: "6vh",
                             marginLeft: "10px",

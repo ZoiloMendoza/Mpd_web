@@ -19,11 +19,21 @@ import NewForm from "./NewForm";
 
 const FormRegister = () => {
   const initialValue = {
-    email: "",
-    phoneNumber: "",
-    password: "",
-    confirmPassword: "",
-    image: "",
+    os: "",
+    ot: "",
+    planta: "",
+    mini: "",
+    dateStart: "",
+    dateEnd: "",
+    user: "",
+    typeElement: "",
+    name: "",
+    typeProcess: "",
+    potenciaCantidad: "",
+    potenciaData: "",
+    golpeNew: "",
+    dataPlate: "",
+    description: "",
   };
 
   const namePlant = [
@@ -99,12 +109,12 @@ const FormRegister = () => {
       name: "Garantia",
     },
     {
-      name: "Elemento 4",
+      name: "Cancelado",
     },
   ];
 
   const handleSubmit = (values, props) => {
-    console.log(values);
+    console.log("values", values);
     alert(JSON.stringify(values));
 
     props.resetForm();
@@ -139,28 +149,26 @@ const FormRegister = () => {
                         <Field
                           as={TextField}
                           label="O.S"
-                          type="Email"
-                          name="email"
+                          type="text"
+                          name="os"
                           fullWidth
                           variant="outlined"
                           margin="dense"
-                          helperText={<ErrorMessage name="email" />}
-                          error={props.errors.email && props.touched.email}
+                          helperText={<ErrorMessage name="os" />}
+                          error={props.errors.os && props.touched.os}
                         />{" "}
                       </Grid>
                       <Grid item xs={12} md={6}>
                         <Field
                           as={TextField}
                           label="O.T"
-                          name="phoneNumber"
+                          type="text"
+                          name="ot"
                           fullWidth
                           variant="outlined"
                           margin="dense"
-                          helperText={<ErrorMessage name="phoneNumber" />}
-                          error={
-                            props.errors.phoneNumber &&
-                            props.touched.phoneNumber
-                          }
+                          helperText={<ErrorMessage name="ot" />}
+                          error={props.errors.ot && props.touched.ot}
                         />
                       </Grid>
                     </Grid>
@@ -170,21 +178,18 @@ const FormRegister = () => {
                           select
                           label="Planta"
                           name="planta"
-                          type="text"
                           fullWidth
                           variant="outlined"
                           margin="dense"
-                          helperText={<ErrorMessage name="password" />}
-                          error={
-                            props.errors.password && props.touched.password
-                          }
+                          helperText={<ErrorMessage name="planta" />}
+                          error={props.errors.planta && props.touched.planta}
                         >
                           {namePlant.map((option) => (
                             <MenuItem key={option.name} value={option.name}>
                               {option.name}
                             </MenuItem>
                           ))}
-                        </TextField>{" "}
+                        </TextField>
                       </Grid>
                       <Grid item xs={12} md={6}>
                         <TextField
@@ -195,36 +200,38 @@ const FormRegister = () => {
                           fullWidth
                           variant="outlined"
                           margin="dense"
-                          helperText={<ErrorMessage name="password" />}
-                          error={
-                            props.errors.password && props.touched.password
-                          }
+                          helperText={<ErrorMessage name="mini" />}
+                          error={props.errors.mini && props.touched.mini}
                         >
                           {nameMini.map((option) => (
                             <MenuItem key={option.name} value={option.name}>
                               {option.name}
                             </MenuItem>
                           ))}
-                        </TextField>{" "}
+                        </TextField>
                       </Grid>
                     </Grid>
                     <Grid container spacing={2}>
                       <Grid item xs={12} md={6}>
                         <LocalizationProvider dateAdapter={AdapterDayjs}>
-                          {/* <DemoContainer components={["DatePicker"]}> */}
-                          <DatePicker label="Fecha de inicio" />
-                          {/* </DemoContainer> */}
+                          <DatePicker
+                            label="Fecha de inicio"
+                            name="dateStart"
+                            helperText={<ErrorMessage name="dateStart" />}
+                            error={
+                              props.errors.dateStart && props.touched.dateStart
+                            }
+                          />
                         </LocalizationProvider>{" "}
                       </Grid>
                       <Grid item xs={12} md={6}>
                         <LocalizationProvider dateAdapter={AdapterDayjs}>
                           <DatePicker
-                            name="confirmPassword"
+                            name="dateEnd"
                             label="Fecha promesa"
-                            helperText={<ErrorMessage name="confirmPassword" />}
+                            helperText={<ErrorMessage name="dateEnd" />}
                             error={
-                              props.errors.confirmPassword &&
-                              props.touched.confirmPassword
+                              props.errors.dateEnd && props.touched.dateEnd
                             }
                           />
                         </LocalizationProvider>{" "}
@@ -235,30 +242,27 @@ const FormRegister = () => {
                         <Field
                           as={TextField}
                           label="Usuario"
-                          name="confirmPassword"
-                          type="password"
+                          name="user"
                           fullWidth
                           variant="outlined"
                           margin="dense"
-                          helperText={<ErrorMessage name="confirmPassword" />}
-                          error={
-                            props.errors.confirmPassword &&
-                            props.touched.confirmPassword
-                          }
-                        />{" "}
+                          helperText={<ErrorMessage name="user" />}
+                          error={props.errors.user && props.touched.user}
+                        />
                       </Grid>
                       <Grid item xs={12} md={6}>
                         <TextField
                           select
                           label="Tipo de elemento"
-                          name="mini"
+                          name="typeElement"
                           // type="text"
                           fullWidth
                           variant="outlined"
                           margin="dense"
-                          helperText={<ErrorMessage name="password" />}
+                          helperText={<ErrorMessage name="typeElement" />}
                           error={
-                            props.errors.password && props.touched.password
+                            props.errors.typeElement &&
+                            props.touched.typeElement
                           }
                         >
                           {typeElement.map((option) => (
@@ -274,30 +278,28 @@ const FormRegister = () => {
                         <Field
                           as={TextField}
                           label="Nombre"
-                          name="confirmPassword"
-                          type="password"
+                          name="name"
                           fullWidth
                           variant="outlined"
                           margin="dense"
-                          helperText={<ErrorMessage name="confirmPassword" />}
-                          error={
-                            props.errors.confirmPassword &&
-                            props.touched.confirmPassword
-                          }
-                        />{" "}
+                          helperText={<ErrorMessage name="name" />}
+                          error={props.errors.name && props.touched.name}
+                        />
                       </Grid>
                       <Grid item xs={12} md={6}>
-                        <TextField
+                        <Field
+                          COMPON
                           select
                           label="Proceso"
-                          name="mini"
+                          name="typeProcess"
                           // type="text"
                           fullWidth
                           variant="outlined"
                           margin="dense"
-                          helperText={<ErrorMessage name="password" />}
+                          helperText={<ErrorMessage name="typeProcess" />}
                           error={
-                            props.errors.password && props.touched.password
+                            props.errors.typeProcess &&
+                            props.touched.typeProcess
                           }
                         >
                           {typeProcess.map((option) => (
@@ -305,11 +307,107 @@ const FormRegister = () => {
                               {option.name}
                             </MenuItem>
                           ))}
+                        </Field>
+                      </Grid>
+                    </Grid>
+
+                    {/* <NewForm /> */}
+                    <p
+                      style={{
+                        color: "#D82E20",
+                        fontSize: "20px",
+                        textAlign: "initial",
+                        marginBottom: "10px",
+                      }}
+                    >
+                      <b>Motor</b>
+                    </p>
+                    <Grid container spacing={2}>
+                      <Grid item xs={12} md={6}>
+                        <Field
+                          as={TextField}
+                          label="Potencia/cantidad"
+                          name="potenciaCantidad"
+                          fullWidth
+                          variant="outlined"
+                          margin="dense"
+                          helperText={<ErrorMessage name="potenciaCantidad" />}
+                          error={
+                            props.errors.potenciaCantidad &&
+                            props.touched.potenciaCantidad
+                          }
+                        />
+                      </Grid>
+                      <Grid item xs={12} md={6}>
+                        <TextField
+                          select
+                          label="Potencia/Dato"
+                          name="potenciaData"
+                          fullWidth
+                          variant="outlined"
+                          margin="dense"
+                          helperText={<ErrorMessage name="potenciaData" />}
+                          error={
+                            props.errors.potenciaData &&
+                            props.touched.potenciaData
+                          }
+                        >
+                          <MenuItem value={"KW"}>KW</MenuItem>
+                          <MenuItem value={"HP"}>HP</MenuItem>
                         </TextField>{" "}
                       </Grid>
                     </Grid>
 
-                    {/* <TextField
+                    <Grid container spacing={2}>
+                      <Grid item xs={12} md={6}>
+                        <TextField
+                          label="Golpe"
+                          name="golpeNew"
+                          fullWidth
+                          variant="outlined"
+                          margin="dense"
+                          helperText={<ErrorMessage name="golpeNew" />}
+                          error={
+                            props.errors.golpeNew && props.touched.golpeNew
+                          }
+                        />
+                      </Grid>
+                      <Grid item xs={12} md={6}>
+                        <TextField
+                          select
+                          label="Placa de Datos"
+                          name="dataPlate"
+                          // type="text"
+                          fullWidth
+                          variant="outlined"
+                          margin="dense"
+                          helperText={<ErrorMessage name="dataPlate" />}
+                          error={
+                            props.errors.dataPlate && props.touched.dataPlate
+                          }
+                        >
+                          <MenuItem value={"SI"}>SI</MenuItem>
+                          <MenuItem value={"NO"}>NO</MenuItem>
+                          {/* {nameMini.map((option) => (
+                            <MenuItem key={option.name} value={option.name}>
+                              {option.name}
+                            </MenuItem>
+                          ))} */}
+                        </TextField>
+                      </Grid>
+                    </Grid>
+                    <TextField
+                      label="Descripcion"
+                      name="description"
+                      fullWidth
+                      variant="outlined"
+                      margin="dense"
+                      helperText={<ErrorMessage name="description" />}
+                      error={
+                        props.errors.description && props.touched.description
+                      }
+                    />
+                    <TextField
                       name="image"
                       type="file"
                       fullWidth
@@ -323,16 +421,27 @@ const FormRegister = () => {
                       error={props.errors.image && props.touched.image}
                       required
                     />
-
                     <Button
-                      variant="contained"
                       type="submit"
-                      color="primary"
-                      fullWidth
+                      variant="outlined"
+                      // sx={12}
+                      style={{
+                        borderRadius: "50px",
+                        background: "#D82E20",
+                        border: "none",
+                        textTransform: "capitalize",
+                        color: "white",
+                        fontSize: "16px",
+                        // width: "8vw",
+                        marginTop: "15px",
+                        height: "6vh",
+                        marginLeft: "10px",
+                      }}
                     >
-                      Submit
-                    </Button> */}
-                    <NewForm />
+                      <span>
+                        <b>Guardar</b>
+                      </span>
+                    </Button>
                   </Form>
                 );
               }}
